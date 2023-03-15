@@ -12,6 +12,7 @@ body {
   color: rgb(216, 216, 216);
   font-family: "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
+    line-height: 20px;
 }
 main {
   display: flex;
@@ -32,6 +33,9 @@ textarea {
   outline: none;
   appearance: none;
 }
+ul {
+  padding: 0 30px;
+}
 .column {
   display: flex;
   flex-direction: column;
@@ -51,6 +55,7 @@ textarea {
   width: 100%;
   border: 3px solid rgb(78, 78, 78);
   padding: 10px;
+  line-height: 26px;
 }
 
 .titlebar {
