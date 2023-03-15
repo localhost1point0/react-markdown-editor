@@ -1,7 +1,11 @@
-import React from 'react'
+import { useEffect } from 'react'
 import Markdown from './component/Markdown'
 
 const App = () => {
+  useEffect(() => {
+    document.title = "Markdown Editor";
+  }, []);
+
   return (
     <Markdown/>
   )
