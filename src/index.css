@@ -1,13 +1,86 @@
-body {
+*,
+::before,
+::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  /* outline: 1px solid yellow; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: rgb(13, 19, 20);
+  color: rgb(216, 216, 216);
+  font-family: "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h2 {
+  margin: 10px 0;
+  color: rgb(204, 204, 204);
+}
+
+textarea {
+  background: transparent;
+  color: rgb(156, 156, 156);
+  resize: none;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+}
+
+.text-area {
+  flex: 1;
+  width: 100%;
+  border: 3px solid rgb(78, 78, 78);
+  padding: 10px;
+}
+.preview {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  border: 3px solid rgb(78, 78, 78);
+  padding: 10px;
+}
+
+.titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+label {
+  margin-right: 5px;
+}
+.styled-select {
+  width: 150px;
+  border-radius: 5px;
+  border: 2px solid;
+  background-color: transparent;
+  padding: 5px;
+  color: #e2e2e2;
+  cursor: pointer;
+}
+.styled-select option {
+  font-size: 14px;
+  background-color: rgb(13, 19, 20);
+  color: #a3a3a3;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media (min-width: 900px) {
+  main 
+{
+  flex-direction: row;
+}
 }
