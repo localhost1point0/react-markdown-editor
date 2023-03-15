@@ -6,13 +6,13 @@ This web app includes syntax highlighting and theme selection to make it easier 
 
 A popular third-party React component, ReactMarkdown is used to build this app. This allows to easily render Markdown content in your React application. It's a simple and efficient way to parse and render Markdown syntax into HTML elements.
 
-# Install
+### Install
 
 ```bash
 npm install react-markdown
 ```
 
-# Use
+### Use
 
 Once you've installed ReactMarkdown, you can use it in your React components by importing it:
 
@@ -32,7 +32,7 @@ This is a **markdown** text rendered using ReactMarkdown component.`;
 };
 ```
 
-# Use a plugin
+### Use a plugin
 
 remark-gfm, adds support for strikethrough, tables, tasklists and URLs directly:
 
@@ -62,17 +62,17 @@ A table:
 };
 ```
 
-# Using Syntax Highlighter with Markdown:
+## Using Syntax Highlighter with Markdown:
 
 **react-syntax-highlighter** overwrites the normal handling of an element. It is basically used for syntax highlighting of code element with different themes.
 
-## Install
+### Install
 
 ```bash
 npm install react-syntax-highlighter
 ```
 
-## Import the necessary components from react-syntax-highlighter and react-markdown:
+### Import the necessary components from react-syntax-highlighter and react-markdown:
 
 ```js
 import React from 'react';
@@ -81,7 +81,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 ```
 
-## Use react-markdown and pass the Code component as the renderers prop:
+### Use react-markdown and pass the Code component as the renderers prop:
 
 ```jsx
 const markdown = `
@@ -101,7 +101,7 @@ const MyComponent = () => {
 
 ```
 
-## Define a function that renders the code blocks using SyntaxHighlighter:
+### Define a function that renders the code blocks using SyntaxHighlighter:
 
 ```js
 const Code = (props) => {
@@ -113,7 +113,7 @@ const Code = (props) => {
 };
 ```
 
-## Some of the prism based Syntaxhighlighter Themes:
+### Some of the prism based Syntaxhighlighter Themes:
 
 - prism
 - okaidia
@@ -131,7 +131,7 @@ const Code = (props) => {
 
 ## View Live Demo:
 
-Open this [https://saragam443.github.io/react-markdown-editor](Link)
+Open this [https://saragam443.github.io/react-markdown-editor]
 
 ## OR
 
