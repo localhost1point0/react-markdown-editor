@@ -34,7 +34,7 @@ const MdOutput = ({ inputText }) => {
   return (
     <div className="column">
       <div className="titlebar">
-        <h2>Preview</h2>
+        <h3>Preview</h3>
         <div>
           <label htmlFor="theme-select">Select theme:</label>
 

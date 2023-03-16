@@ -12,17 +12,50 @@ body {
   color: rgb(216, 216, 216);
   font-family: "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
-    line-height: 20px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 main {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  padding: 10px;
+}
+.main-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  font-size: 2.625em;
+  line-height: 1.55;
+  font-weight: 900;
 }
 
 h2 {
-  margin: 10px 0;
-  color: rgb(204, 204, 204);
+  font-size: 2em;
+  line-height: 1.58;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1.625em;
+  line-height: 1.62;
+  font-weight: 900;
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.65;
+  font-weight: 900;
+}
+
+h5 {
+  font-size: 1em;
+  line-height: 1.65;
+  font-weight: 700;
 }
 
 textarea {
@@ -40,7 +73,6 @@ ul {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 10px;
 }
 
 .text-area {
@@ -82,10 +114,28 @@ label {
   cursor: pointer;
   padding: 10px;
 }
+button {
+  background-color: transparent;
+  border: 3px solid rgb(119, 119, 119);
+  padding: 5px;
+  font-size: 14px;
+  margin: 5px 0 0;
+  width: 100px;
+  cursor: pointer;
+  color: rgb(199, 199, 199);
+}
+button:hover {
+  background-color: aquamarine;
+  color: black;
+  border-color: aquamarine;
+}
 
 @media (min-width: 900px) {
-  main 
-{
-  flex-direction: row;
+  .main-container {
+    flex-direction: row;
+  }
 }
+
+p {
+  margin: 0 0 1.3rem;
 }

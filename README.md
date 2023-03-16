@@ -16,7 +16,7 @@ npm install react-markdown
 
 Once you've installed ReactMarkdown, you can use it in your React components by importing it:
 
-```js
+```jsx
 import ReactMarkdown from "react-markdown";
 
 const MyComponent = () => {
@@ -74,7 +74,7 @@ npm install react-syntax-highlighter
 
 ### Import the necessary components from react-syntax-highlighter and react-markdown:
 
-```js
+```jsx
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -103,7 +103,7 @@ const MyComponent = () => {
 
 ### Define a function that renders the code blocks using SyntaxHighlighter:
 
-```js
+```jsx
 const Code = (props) => {
   return (
     <SyntaxHighlighter language={props.language} style={dracula}>

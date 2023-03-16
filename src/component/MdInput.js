@@ -1,9 +1,12 @@
 import React from "react";
 
 const MdInput = ({ inputText, setInputText }) => {
+
+  
+
   return (
     <div className="column">
-      <h2>Input</h2>
+      <h3>Input</h3>
       <textarea
         className="text-area"
         value={inputText}
