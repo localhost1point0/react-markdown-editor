@@ -1,14 +1,22 @@
-import { useEffect } from 'react'
-import Markdown from './component/Markdown'
+import { useState, useEffect } from "react";
+import MdInput from "./component/MdInput";
+import MdOutput from "./component/MdOutput";
 
 const App = () => {
   useEffect(() => {
     document.title = "Markdown Editor";
   }, []);
 
-  return (
-    <Markdown/>
-  )
-}
+  const [inputText, setInputText] = useState("");
 
-export default App
+ 
+
+  return (
+    <main>
+        <MdInput inputText={inputText} setInputText={setInputText} />
+        <MdOutput inputText={inputText} />
+    </main>
+  );
+};
+
+export default App;

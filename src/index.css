@@ -17,15 +17,7 @@ body {
 }
 main {
   display: flex;
-  flex-direction: column;
   height: 100vh;
-  padding: 10px;
-}
-.main-container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 10px;
 }
 
 h1 {
@@ -73,21 +65,24 @@ ul {
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding: 10px;
+
 }
+
 
 .text-area {
   flex: 1;
   width: 100%;
-  border: 3px solid rgb(78, 78, 78);
   padding: 10px;
+  border: 3px solid rgb(211, 211, 211);
 }
 .preview {
   overflow: auto;
   height: 100%;
   width: 100%;
-  border: 3px solid rgb(78, 78, 78);
   padding: 10px;
   line-height: 26px;
+  border: 3px solid rgb(211, 211, 211);
 }
 
 .titlebar {
@@ -115,14 +110,14 @@ label {
   padding: 10px;
 }
 button {
-  background-color: transparent;
-  border: 3px solid rgb(119, 119, 119);
+  background-color: rgb(204, 204, 204);
+  font-size: 12px;
+  border-radius: 10px;
+  font-weight: 600;
   padding: 5px;
-  font-size: 14px;
-  margin: 5px 0 0;
-  width: 100px;
+  width: 80px;
   cursor: pointer;
-  color: rgb(199, 199, 199);
+  color: black;
 }
 button:hover {
   background-color: aquamarine;
@@ -131,7 +126,7 @@ button:hover {
 }
 
 @media (min-width: 900px) {
-  .main-container {
+  main {
     flex-direction: row;
   }
 }
