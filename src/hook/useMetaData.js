@@ -42,7 +42,16 @@ const useMetaData = ({ title, description, author, image }) => {
       metaOGDescription.setAttribute("property", "og:description");
       document.head.appendChild(metaOGDescription);
     }
-    metaOGDescription.setAttribute("content", description);
+    // metaOGDescription.setAttributelet metaOGUrl = document.querySelector('meta[property="og:url"]');
+    // if (!metaOGUrl) {
+    //   metaOGUrl = document.createElement("meta");
+    //   metaOGUrl.setAttribute("property", "og:url");
+    //   document.head.appendChild(metaOGUrl);
+    // }
+    // metaOGUrl.setAttribute(
+    //   "content",
+    //   "https://saragam443.github.io/react-markdown-editor"
+    // );("content", description);
 
     let metaOGType = document.querySelector('meta[property="og:type"]');
     if (!metaOGType) {
@@ -52,16 +61,16 @@ const useMetaData = ({ title, description, author, image }) => {
     }
     metaOGType.setAttribute("content", "article");
 
-    let metaOGUrl = document.querySelector('meta[property="og:url"]');
-    if (!metaOGUrl) {
-      metaOGUrl = document.createElement("meta");
-      metaOGUrl.setAttribute("property", "og:url");
-      document.head.appendChild(metaOGUrl);
-    }
-    metaOGUrl.setAttribute(
-      "content",
-      "https://saragam443.github.io/react-markdown-editor"
-    );
+    // let metaOGUrl = document.querySelector('meta[property="og:url"]');
+    // if (!metaOGUrl) {
+    //   metaOGUrl = document.createElement("meta");
+    //   metaOGUrl.setAttribute("property", "og:url");
+    //   document.head.appendChild(metaOGUrl);
+    // }
+    // metaOGUrl.setAttribute(
+    //   "content",
+    //   "https://saragam443.github.io/react-markdown-editor"
+    // );
 
     let metaOGSite_name = document.querySelector(
       'meta[property="og:site_name"]'
