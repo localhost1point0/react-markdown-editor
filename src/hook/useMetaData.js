@@ -13,6 +13,14 @@ const useMetaData = ({ title, description, author, image }) => {
     }
     metaDescription.setAttribute("content", description);
 
+    let metaImage = document.querySelector('meta[property="image"]');
+    if (!metaImage) {
+      metaImage = document.createElement("meta");
+      metaImage.setAttribute("property", "image");
+      document.head.appendChild(metaImage);
+    }
+    metaImage.setAttribute("content", image);
+
     let metaAuthor = document.querySelector('meta[name="author"]');
     if (!metaAuthor) {
       metaAuthor = document.createElement("meta");
@@ -29,13 +37,23 @@ const useMetaData = ({ title, description, author, image }) => {
     }
     metaOGTitle.setAttribute("content", title);
 
-    let metaOGDescription = document.querySelector('meta[property="og:description"]');
+    let metaOGDescription = document.querySelector(
+      'meta[property="og:description"]'
+    );
     if (!metaOGDescription) {
       metaOGDescription = document.createElement("meta");
       metaOGDescription.setAttribute("property", "og:description");
       document.head.appendChild(metaOGDescription);
     }
     metaOGDescription.setAttribute("content", description);
+
+    let metaOGImage = document.querySelector('meta[property="og:image"]');
+    if (!metaOGImage) {
+      metaOGImage = document.createElement("meta");
+      metaOGImage.setAttribute("property", "og:image");
+      document.head.appendChild(metaOGImage);
+    }
+    metaOGImage.setAttribute("content", image);
 
     let metaOGAuthor = document.querySelector('meta[property="og:author"]');
     if (!metaOGAuthor) {
@@ -48,7 +66,7 @@ const useMetaData = ({ title, description, author, image }) => {
     return () => {
       document.title = prevTitle;
     };
-  }, [title, description, author]);
+  }, [title, description, author, image]);
 };
 
 export default useMetaData;
