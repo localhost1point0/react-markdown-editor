@@ -30,6 +30,7 @@ const useMetaData = ({ title, description, author, image }) => {
     if (!metaOGTitle) {
       metaOGTitle = document.createElement("meta");
       metaOGTitle.setAttribute("property", "og:title");
+      metaOGTitle.setAttribute("name", "title");
       document.head.appendChild(metaOGTitle);
     }
     metaOGTitle.setAttribute("content", title);
@@ -40,7 +41,7 @@ const useMetaData = ({ title, description, author, image }) => {
     if (!metaOGDescription) {
       metaOGDescription = document.createElement("meta");
       metaOGDescription.setAttribute("property", "og:description");
-      metaOGDescription.setAttribute("description", "description");
+      metaOGDescription.setAttribute("name", "description");
       document.head.appendChild(metaOGDescription);
     }
     metaOGDescription.setAttribute("content", description);
