@@ -11,7 +11,10 @@ const useMetaData = ({ title, description, author, image }) => {
       metaDescription.setAttribute("name", "description");
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute("content", description);
+    metaDescription.setAttribute(
+      "content",
+      "A react app that uses react-markdown extension to create real time markdown editor and syntax highlighter"
+    );
 
     let metaAuthor = document.querySelector('meta[name="author"]');
     if (!metaAuthor) {
