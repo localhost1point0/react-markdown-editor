@@ -43,6 +43,8 @@ const useMetaData = ({ title, description, author, image }) => {
       metaOGDescription.setAttribute("description", "description");
       document.head.appendChild(metaOGDescription);
     }
+    metaOGDescription.setAttribute("content", description);
+
     // metaOGDescription.setAttributelet metaOGUrl = document.querySelector('meta[property="og:url"]');
     // if (!metaOGUrl) {
     //   metaOGUrl = document.createElement("meta");
