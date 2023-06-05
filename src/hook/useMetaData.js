@@ -13,14 +13,6 @@ const useMetaData = ({ title, description, author, image }) => {
     }
     metaDescription.setAttribute("content", description);
 
-    let metaImage = document.querySelector('meta[property="image"]');
-    if (!metaImage) {
-      metaImage = document.createElement("meta");
-      metaImage.setAttribute("property", "image");
-      document.head.appendChild(metaImage);
-    }
-    metaImage.setAttribute("content", image);
-
     let metaAuthor = document.querySelector('meta[name="author"]');
     if (!metaAuthor) {
       metaAuthor = document.createElement("meta");
@@ -28,6 +20,8 @@ const useMetaData = ({ title, description, author, image }) => {
       document.head.appendChild(metaAuthor);
     }
     metaAuthor.setAttribute("content", author);
+
+    // OG: meta
 
     let metaOGTitle = document.querySelector('meta[property="og:title"]');
     if (!metaOGTitle) {
@@ -47,21 +41,45 @@ const useMetaData = ({ title, description, author, image }) => {
     }
     metaOGDescription.setAttribute("content", description);
 
+    let metaOGType = document.querySelector('meta[property="og:type"]');
+    if (!metaOGType) {
+      metaOGType = document.createElement("meta");
+      metaOGType.setAttribute("property", "og:type");
+      document.head.appendChild(metaOGType);
+    }
+    metaOGType.setAttribute("content", "article");
+
+    let metaOGUrl = document.querySelector('meta[property="og:url"]');
+    if (!metaOGUrl) {
+      metaOGUrl = document.createElement("meta");
+      metaOGUrl.setAttribute("property", "og:url");
+      document.head.appendChild(metaOGUrl);
+    }
+    metaOGUrl.setAttribute(
+      "content",
+      "https://saragam443.github.io/react-markdown-editor"
+    );
+
+    let metaOGSite_name = document.querySelector(
+      'meta[property="og:site_name"]'
+    );
+    if (!metaOGSite_name) {
+      metaOGSite_name = document.createElement("meta");
+      metaOGSite_name.setAttribute("property", "og:site_name");
+      document.head.appendChild(metaOGSite_name);
+    }
+    metaOGSite_name.setAttribute("content", "saragam's blog");
+
     let metaOGImage = document.querySelector('meta[property="og:image"]');
     if (!metaOGImage) {
       metaOGImage = document.createElement("meta");
       metaOGImage.setAttribute("property", "og:image");
       document.head.appendChild(metaOGImage);
     }
-    metaOGImage.setAttribute("content", image);
-
-    let metaOGAuthor = document.querySelector('meta[property="og:author"]');
-    if (!metaOGAuthor) {
-      metaOGAuthor = document.createElement("meta");
-      metaOGAuthor.setAttribute("property", "og:author");
-      document.head.appendChild(metaOGAuthor);
-    }
-    metaOGAuthor.setAttribute("content", author);
+    metaOGImage.setAttribute(
+      "content",
+      "https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/markdown-512.png"
+    );
 
     return () => {
       document.title = prevTitle;
