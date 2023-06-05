@@ -21,18 +21,34 @@ const useMetaData = ({ title, description, author, image }) => {
     }
     metaAuthor.setAttribute("content", author);
 
-    let metaImage = document.querySelector('meta[name="image"]');
-    if (!metaImage) {
-      metaImage = document.createElement("meta");
-      metaImage.setAttribute("name", "image");
-      document.head.appendChild(metaImage);
+    let metaOGTitle = document.querySelector('meta[property="og:title"]');
+    if (!metaOGTitle) {
+      metaOGTitle = document.createElement("meta");
+      metaOGTitle.setAttribute("property", "og:title");
+      document.head.appendChild(metaOGTitle);
     }
-    metaImage.setAttribute("content", image);
+    metaOGTitle.setAttribute("content", title);
+
+    let metaOGDescription = document.querySelector('meta[property="og:description"]');
+    if (!metaOGDescription) {
+      metaOGDescription = document.createElement("meta");
+      metaOGDescription.setAttribute("property", "og:description");
+      document.head.appendChild(metaOGDescription);
+    }
+    metaOGDescription.setAttribute("content", description);
+
+    let metaOGAuthor = document.querySelector('meta[property="og:author"]');
+    if (!metaOGAuthor) {
+      metaOGAuthor = document.createElement("meta");
+      metaOGAuthor.setAttribute("property", "og:author");
+      document.head.appendChild(metaOGAuthor);
+    }
+    metaOGAuthor.setAttribute("content", author);
 
     return () => {
       document.title = prevTitle;
     };
-  }, [title, description, author, image]);
+  }, [title, description, author]);
 };
 
 export default useMetaData;

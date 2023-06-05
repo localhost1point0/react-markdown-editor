@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MdInput from "./component/MdInput";
 import MdOutput from "./component/MdOutput";
 import useMetaData from "./hook/useMetaData";
