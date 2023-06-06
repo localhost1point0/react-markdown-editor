@@ -1,10 +1,29 @@
 import { useEffect } from "react";
 
-const useMetaData = ({ title, description, author }) => {
+const useMetaData = ({ title, description, author, image }) => {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = title;
 
+    // Set meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", description);
+
+    // Set meta author
+    let metaAuthor = document.querySelector('meta[name="author"]');
+    if (!metaAuthor) {
+      metaAuthor = document.createElement("meta");
+      metaAuthor.setAttribute("name", "author");
+      document.head.appendChild(metaAuthor);
+    }
+    metaAuthor.setAttribute("content", author);
+
+    // Set og:title
     let metaOGTitle = document.querySelector('meta[property="og:title"]');
     if (!metaOGTitle) {
       metaOGTitle = document.createElement("meta");
@@ -13,9 +32,8 @@ const useMetaData = ({ title, description, author }) => {
     }
     metaOGTitle.setAttribute("content", title);
 
-    let metaOGDescription = document.querySelector(
-      'meta[property="og:description"]'
-    );
+    // Set og:description
+    let metaOGDescription = document.querySelector('meta[property="og:description"]');
     if (!metaOGDescription) {
       metaOGDescription = document.createElement("meta");
       metaOGDescription.setAttribute("property", "og:description");
@@ -23,6 +41,7 @@ const useMetaData = ({ title, description, author }) => {
     }
     metaOGDescription.setAttribute("content", description);
 
+    // Set og:author
     let metaOGAuthor = document.querySelector('meta[property="og:author"]');
     if (!metaOGAuthor) {
       metaOGAuthor = document.createElement("meta");
@@ -31,18 +50,19 @@ const useMetaData = ({ title, description, author }) => {
     }
     metaOGAuthor.setAttribute("content", author);
 
-    let metaOGType = document.querySelector('meta[property="og:type"]');
-    if (!metaOGType) {
-      metaOGType = document.createElement("meta");
-      metaOGType.setAttribute("property", "og:atype");
-      document.head.appendChild(metaOGType);
+    // Set og:image
+    let metaOGImage = document.querySelector('meta[property="og:image"]');
+    if (!metaOGImage) {
+      metaOGImage = document.createElement("meta");
+      metaOGImage.setAttribute("property", "og:image");
+      document.head.appendChild(metaOGImage);
     }
-    metaOGType.setAttribute("content", "article");
+    metaOGImage.setAttribute("content", image);
 
     return () => {
       document.title = prevTitle;
     };
-  }, [title, description, author]);
+  }, [title, description, author, image]);
 };
 
 export default useMetaData;
