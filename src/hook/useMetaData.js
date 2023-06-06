@@ -6,13 +6,24 @@ const useMetaData = ({ title, description, author, image }) => {
     document.title = title;
 
     // Set meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
+    let metaDescription = document.querySelector('meta[name="description"][property="og:description"]');
     if (!metaDescription) {
       metaDescription = document.createElement("meta");
       metaDescription.setAttribute("name", "description");
+      metaDescription.setAttribute("property", "og:description");
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute("content", description);
+
+    // Set meta title
+    let metaTitle = document.querySelector('meta[name="title"][property="og:title"]');
+    if (!metaTitle) {
+      metaTitle = document.createElement("meta");
+      metaTitle.setAttribute("name", "title");
+      metaTitle.setAttribute("property", "og:title");
+      document.head.appendChild(metaTitle);
+    }
+    metaTitle.setAttribute("content", title);
 
     // Set meta author
     let metaAuthor = document.querySelector('meta[name="author"]');
@@ -23,41 +34,15 @@ const useMetaData = ({ title, description, author, image }) => {
     }
     metaAuthor.setAttribute("content", author);
 
-    // Set og:title
-    let metaOGTitle = document.querySelector('meta[property="og:title"]');
-    if (!metaOGTitle) {
-      metaOGTitle = document.createElement("meta");
-      metaOGTitle.setAttribute("property", "og:title");
-      document.head.appendChild(metaOGTitle);
+    // Set meta image
+    let metaImage = document.querySelector('meta[name="image"][property="og:image"]');
+    if (!metaImage) {
+      metaImage = document.createElement("meta");
+      metaImage.setAttribute("name", "image");
+      metaImage.setAttribute("property", "og:image");
+      document.head.appendChild(metaImage);
     }
-    metaOGTitle.setAttribute("content", title);
-
-    // Set og:description
-    let metaOGDescription = document.querySelector('meta[property="og:description"]');
-    if (!metaOGDescription) {
-      metaOGDescription = document.createElement("meta");
-      metaOGDescription.setAttribute("property", "og:description");
-      document.head.appendChild(metaOGDescription);
-    }
-    metaOGDescription.setAttribute("content", description);
-
-    // Set og:author
-    let metaOGAuthor = document.querySelector('meta[property="og:author"]');
-    if (!metaOGAuthor) {
-      metaOGAuthor = document.createElement("meta");
-      metaOGAuthor.setAttribute("property", "og:author");
-      document.head.appendChild(metaOGAuthor);
-    }
-    metaOGAuthor.setAttribute("content", author);
-
-    // Set og:image
-    let metaOGImage = document.querySelector('meta[property="og:image"]');
-    if (!metaOGImage) {
-      metaOGImage = document.createElement("meta");
-      metaOGImage.setAttribute("property", "og:image");
-      document.head.appendChild(metaOGImage);
-    }
-    metaOGImage.setAttribute("content", image);
+    metaImage.setAttribute("content", image);
 
     return () => {
       document.title = prevTitle;
