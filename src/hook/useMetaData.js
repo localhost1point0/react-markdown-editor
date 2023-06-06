@@ -5,6 +5,14 @@ const useMetaData = ({ title, description, author }) => {
     const prevTitle = document.title;
     document.title = title;
 
+    let metaDescription = document.querySelector('meta[property="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("property", "description");
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", description);
+
     let metaOGTitle = document.querySelector('meta[property="og:title"]');
     if (!metaOGTitle) {
       metaOGTitle = document.createElement("meta");
