@@ -5,14 +5,6 @@ const useMetaData = ({ title, description, author }) => {
     const prevTitle = document.title;
     document.title = title;
 
-    let metaDescription = document.querySelector('meta[property="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("property", "description");
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", description);
-
     let metaOGTitle = document.querySelector('meta[property="og:title"]');
     if (!metaOGTitle) {
       metaOGTitle = document.createElement("meta");
@@ -39,13 +31,13 @@ const useMetaData = ({ title, description, author }) => {
     }
     metaOGAuthor.setAttribute("content", author);
 
-    // let metaOGType = document.querySelector('meta[property="og:type"]');
-    // if (!metaOGType) {
-    //   metaOGType = document.createElement("meta");
-    //   metaOGType.setAttribute("property", "og:atype");
-    //   document.head.appendChild(metaOGType);
-    // }
-    // metaOGType.setAttribute("content", "article");
+    let metaOGType = document.querySelector('meta[property="og:type"]');
+    if (!metaOGType) {
+      metaOGType = document.createElement("meta");
+      metaOGType.setAttribute("property", "og:atype");
+      document.head.appendChild(metaOGType);
+    }
+    metaOGType.setAttribute("content", "article");
 
     return () => {
       document.title = prevTitle;
