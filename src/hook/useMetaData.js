@@ -13,11 +13,30 @@ const useMetaData = ({ title, description, author, image }) => {
     // }
     // metaDescription.setAttribute("content", description);
 
+    let metaOgTitle = document.querySelector('meta[property="og:title"]');
+    let metaOgDescription = document.querySelector(
+      'meta[property="og:description"]'
+    );
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute("content", description);
     }
-    
+
+    if (!metaOgTitle) {
+      metaOgTitle = document.createElement("meta");
+      metaOgTitle.setAttribute("property", "og:title");
+      document.head.appendChild(metaOgTitle);
+    }
+
+    if (!metaOgDescription) {
+      metaOgDescription = document.createElement("meta");
+      metaOgDescription.setAttribute("property", "og:description");
+      document.head.appendChild(metaOgDescription);
+    }
+
+    metaOgTitle.setAttribute("content", title);
+    metaOgDescription.setAttribute("content", description);
 
     return () => {
       document.title = prevTitle;
