@@ -5,32 +5,19 @@ const useMetaData = ({ title, description, author, image }) => {
     const prevTitle = document.title;
     document.title = title;
 
-    // Set meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", description);
+    // let metaDescription = document.querySelector('meta[name="description"]');
+    // if (!metaDescription) {
+    //   metaDescription = document.createElement("meta");
+    //   metaDescription.setAttribute("name", "description");
+    //   document.head.appendChild(metaDescription);
+    // }
+    // metaDescription.setAttribute("content", description);
 
-    // Set meta author
-    let metaAuthor = document.querySelector('meta[name="author"]');
-    if (!metaAuthor) {
-      metaAuthor = document.createElement("meta");
-      metaAuthor.setAttribute("name", "author");
-      document.head.appendChild(metaAuthor);
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", description);
     }
-    metaAuthor.setAttribute("content", author);
-
-    // Set meta image
-    let metaImage = document.querySelector('meta[name="image"]');
-    if (!metaImage) {
-      metaImage = document.createElement("meta");
-      metaImage.setAttribute("name", "image");
-      document.head.appendChild(metaImage);
-    }
-    metaImage.setAttribute("content", image);
+    
 
     return () => {
       document.title = prevTitle;
